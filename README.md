@@ -80,3 +80,75 @@ O projeto inclui a avaliação do modelo usando métricas como **acurácia**, **
 ### Teste com Imagem Única
 
 Ao final da execução, o script carrega uma imagem de teste e utiliza o modelo treinado para fazer uma predição, mostrando o resultado final.
+
+# 04-Deteccao-Objetos-YOLOv4
+
+Este projeto demonstra a detecção de objetos em imagens e vídeos usando o modelo **YOLOv4** (You Only Look Once) e o framework **Darknet**. O YOLOv4 é um algoritmo de detecção de objetos em tempo real que utiliza aprendizado profundo para identificar múltiplas instâncias de objetos em uma única imagem.
+
+### Tecnologias e Pré-requisitos
+
+* **Sistema Operacional:** Linux (Recomendado) ou WSL (Windows Subsystem for Linux) no Windows.
+* **Framework:** Darknet
+* **Linguagens/Bibliotecas:** C, Python, OpenCV, Matplotlib
+
+### Configuração do Ambiente
+
+1.  **Clone o Repositório Darknet:**
+    * Abra o terminal e clone o repositório oficial do Darknet:
+    ```bash
+    git clone [https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)
+    ```
+
+2.  **Ajuste o Makefile:**
+    * Navegue para a pasta `darknet` no seu terminal:
+    ```bash
+    cd darknet/
+    ```
+    * Edite o arquivo `Makefile` para habilitar o suporte à GPU, OpenCV e CUDNN (se tiver uma placa de vídeo NVIDIA compatível):
+    ```bash
+    # Abra o Makefile em um editor de texto e mude:
+    # GPU=0  -> GPU=1
+    # CUDNN=0 -> CUDNN=1
+    # OPENCV=0 -> OPENCV=1
+    ```
+
+3.  **Compile o Darknet:**
+    * No terminal, compile o projeto:
+    ```bash
+    make
+    ```
+
+4.  **Download dos Pesos do Modelo:**
+    * Os pesos do YOLOv4 são muito grandes e não estão incluídos no repositório. Faça o download e coloque o arquivo na pasta `darknet/`.
+    * **Link para download:** [yolov4.weights (245MB)](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights)
+    ```bash
+    # Ou use o comando wget no terminal:
+    # wget [https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights)
+    ```
+
+### Como Executar a Detecção
+
+#### Detecção em Imagem
+
+1.  **Abra o terminal** na pasta **`darknet/`**.
+2.  Execute o comando `darknet detect`, especificando o arquivo de configuração, os pesos e a imagem.
+    * ```bash
+      ./darknet detect cfg/yolov4.cfg yolov4.weights data/person.jpg
+      ```
+    * Após a execução, a imagem com as detecções será salva como `predictions.jpg`.
+
+3.  **Para visualizar a imagem**, você pode usar o script `deteccao_yolo_local.py` (dentro da pasta `04-Deteccao-Objetos-YOLOv4/`) com os comandos:
+    * ```bash
+      cd ../04-Deteccao-Objetos-YOLOv4/
+      python deteccao_yolo_local.py
+      ```
+
+#### Detecção em Vídeo (Em Tempo Real)
+
+1.  Coloque um arquivo de vídeo na pasta `darknet/` (ou em qualquer pasta com um caminho acessível).
+2.  Execute o comando `darknet detector demo`, especificando o arquivo de dados, a configuração, os pesos e o caminho para o vídeo.
+    * ```bash
+      ./darknet detector demo cfg/coco.data cfg/yolov4.cfg yolov4.weights -dont_show <caminho_para_o_video>
+      ```
+
+---
