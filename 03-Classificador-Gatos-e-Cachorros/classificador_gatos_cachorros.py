@@ -8,19 +8,11 @@ import zipfile
 import numpy as np
 import cv2
 
-# --- AJUSTES PARA AMBIENTE LOCAL ---
-# Não precisamos dessas linhas em ambiente local
-# from google.colab.patches import cv2_imshow
-# from google.colab import drive
-# drive.mount('/content/drive')
-
-# Caminho do arquivo zip agora é relativo à pasta do projeto
 path = 'cat_dog_2.zip'
 zip_object = zipfile.ZipFile(file=path, mode='r')
 zip_object.extractall('./')
 zip_object.close()
 
-# Caminhos dos datasets de treinamento e teste
 training_path = './cat_dog_2/training_set'
 test_path = './cat_dog_2/test_set'
 
@@ -71,15 +63,12 @@ plt.xlabel('Predições')
 plt.ylabel('Valores Reais')
 plt.show() # Para exibir o gráfico no ambiente local
 
-# Salvar o modelo em um único arquivo, uma prática mais moderna do Keras
 network.save('modelo_classificador.h5')
 
 # --- TESTE COM UMA NOVA IMAGEM ---
-# Caminho da imagem de teste agora é relativo ao diretório extraído do zip
 test_image_path = './cat_dog_2/test_set/cat/cat.3500.jpg'
 image = cv2.imread(test_image_path)
 
-# Aumentar o tamanho da janela para melhor visualização
 cv2.imshow('Imagem Original', cv2.resize(image, (200, 200)))
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -88,11 +77,10 @@ image = cv2.resize(image, (64, 64))
 image = image / 255
 image = image.reshape(-1, 64, 64, 3)
 
-# Realiza a predição
 resultado = network.predict(image)
 resultado = np.argmax(resultado)
 
-dataset_teste.class_indices # Para referência
+dataset_teste.class_indices
 nomes_classes = ['cat', 'dog']
 
 if resultado == 0:
