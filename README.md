@@ -38,3 +38,44 @@ Neste projeto, a detecção de faces é realizada utilizando o algoritmo Histogr
     ```bash
     python hog_face_detection.py
     ```
+
+# 03-Classificador-Gatos-e-Cachorros
+
+Este projeto é um classificador de imagens que utiliza Redes Neurais Convolucionais (CNN) com o framework **TensorFlow/Keras** para distinguir entre imagens de cães e gatos. O modelo foi treinado com o dataset `cat_dog_2.zip` e demonstra as etapas de pré-processamento de imagens, construção e treinamento de uma CNN e avaliação de desempenho.
+
+### Tecnologias e Dependências
+
+* Python
+* TensorFlow
+* Keras
+* OpenCV
+* NumPy
+* Matplotlib
+* Seaborn
+
+### Como Executar
+
+1.  **Pré-requisitos:** Garanta que você tenha um ambiente virtual Python configurado e todas as bibliotecas listadas acima instaladas.
+    * ```bash
+        pip install tensorflow opencv-python numpy matplotlib seaborn
+        ```
+
+2.  **Organização de Arquivos:** Certifique-se de que o arquivo `cat_dog_2.zip` está na mesma pasta que o script `classificador_gatos_cachorros.py`.
+
+3.  **Execução:** Abra o terminal na pasta do projeto e execute o script.
+    * ```bash
+        python classificador_gatos_cachorros.py
+        ```
+    * O script irá extrair o dataset, treinar o modelo e exibir a matriz de confusão e a acurácia. O modelo treinado será salvo nos arquivos `network.json` e `weights.hdf5` na mesma pasta.
+
+### Sobre o Modelo
+
+A arquitetura da rede neural consiste em camadas convolucionais e de pooling para extrair características das imagens, seguidas por camadas densas para a classificação final.
+
+### Avaliação de Desempenho
+
+O projeto inclui a avaliação do modelo usando métricas como **acurácia**, **matriz de confusão** e **relatório de classificação**, demonstrando a capacidade do modelo de generalizar para novas imagens.
+
+### Teste com Imagem Única
+
+Ao final da execução, o script carrega uma imagem de teste e utiliza o modelo treinado para fazer uma predição, mostrando o resultado final.
