@@ -55,18 +55,19 @@ Este projeto é um classificador de imagens que utiliza Redes Neurais Convolucio
 
 ### Como Executar
 
-1.  **Pré-requisitos:** Garanta que você tenha um ambiente virtual Python configurado e todas as bibliotecas listadas acima instaladas.
+1.  **Pré-requisitos:** Garanta que você tenha um ambiente virtual Python configurado e as bibliotecas necessárias instaladas.
     * ```bash
         pip install tensorflow opencv-python numpy matplotlib seaborn
         ```
 
-2.  **Organização de Arquivos:** Certifique-se de que o arquivo `cat_dog_2.zip` está na mesma pasta que o script `classificador_gatos_cachorros.py`.
+2.  **Dataset:** Este projeto utiliza o dataset `cat_dog_2.zip`. Por ser um arquivo grande, ele não está incluído neste repositório. Faça o download a partir do link abaixo e coloque-o na mesma pasta do script `classificador_gatos_cachorros.py`.
+    * **Link para download do dataset:** [Link para o dataset]
 
 3.  **Execução:** Abra o terminal na pasta do projeto e execute o script.
     * ```bash
         python classificador_gatos_cachorros.py
         ```
-    * O script irá extrair o dataset, treinar o modelo e exibir a matriz de confusão e a acurácia. O modelo treinado será salvo nos arquivos `network.json` e `weights.hdf5` na mesma pasta.
+    * O script irá extrair o dataset, treinar o modelo e exibir a matriz de confusão e a acurácia. O modelo treinado será salvo na mesma pasta, nos arquivos `network.json` e `weights.hdf5`.
 
 ### Sobre o Modelo
 
