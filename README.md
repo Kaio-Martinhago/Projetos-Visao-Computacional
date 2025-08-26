@@ -61,7 +61,7 @@ Este projeto é um classificador de imagens que utiliza Redes Neurais Convolucio
         ```
 
 2.  **Dataset:** Este projeto utiliza o dataset `cat_dog_2.zip`. Por ser um arquivo grande, ele não está incluído neste repositório. Faça o download a partir do link abaixo e coloque-o na mesma pasta do script `classificador_gatos_cachorros.py`.
-    * **Link para download do dataset:** [Link para o dataset]
+    * **Link para download do dataset:** [Link para o dataset](https://drive.google.com/file/d/1SSSYSK7cjqGN1J7zTJABHkYUrV5PBT5n/view?usp=sharing)
 
 3.  **Execução:** Abra o terminal na pasta do projeto e execute o script.
     * ```bash
