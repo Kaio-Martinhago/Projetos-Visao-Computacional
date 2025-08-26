@@ -15,7 +15,7 @@ Este projeto demonstra a detecção de faces em uma imagem estática utilizando 
 
 **Como Executar:**
 1.  Garanta que você tenha o ambiente virtual ativado e as bibliotecas necessárias instaladas.
-2.  Baixe o arquivo de pesos `mmod_human_face_detector.dat` e coloque-o na pasta `Visao_Computacional_Guia_Completo/Weights/`. Você pode encontrar esse arquivo em sites como [o repositório de modelos do dlib](http://dlib.net/files/mmod_human_face_detector.dat.bz2).
+2.  Baixe o arquivo de pesos `mmod_human_face_detector.dat` e coloque-o na pasta `Visao_Computacional_Guia_Completo/Weights/`.
 3.  Execute o script no terminal:
     ```bash
     python cnn_face_detection.py
