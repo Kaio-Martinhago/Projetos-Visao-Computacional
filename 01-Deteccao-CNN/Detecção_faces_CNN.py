@@ -1,9 +1,9 @@
 import cv2
 import dlib
 
-imagem = cv2.imread('Visao_Computacional_Guia_Completo\Images\people2.jpg')
+imagem = cv2.imread('01-Deteccao-CNN/people2.jpg')
 
-detector_face_cnn = dlib.cnn_face_detection_model_v1('Visao_Computacional_Guia_Completo\Weights\mmod_human_face_detector.dat')
+detector_face_cnn = dlib.cnn_face_detection_model_v1('03-Deteccao-CNN/mmod_human_face_detector.dat')
 
 deteccoes = detector_face_cnn(imagem, 1)
 for face in deteccoes:
