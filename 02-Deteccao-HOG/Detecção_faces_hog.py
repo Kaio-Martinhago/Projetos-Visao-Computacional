@@ -1,7 +1,7 @@
 import dlib
 import cv2
 
-imagem = cv2.imread('Visao_Computacional_Guia_Completo\Images\people2.jpg')
+imagem = cv2.imread('02-Deteccao-HOG/people2.jpg')
 detector_faces = dlib.get_frontal_face_detector()
 
 deteccoes = detector_faces(imagem, 2)
